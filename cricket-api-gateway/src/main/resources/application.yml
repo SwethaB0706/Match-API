@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: cricket-api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: insert-match-data
+          uri: ${MATCH_API_URI:http://localhost:8088}  # Default to localhost if not provided
+          predicates:
+            - Path=/api/matches/insert
+        - id: get-matches-by-player
+          uri: ${MATCH_API_URI:http://localhost:8088}
+          predicates:
+            - Path=/api/matches/player/**
+        - id: get-cumulative-score
+          uri: ${MATCH_API_URI:http://localhost:8088}
+          predicates:
+            - Path=/api/matches/cumulative-score
+        - id: get-scores-by-date
+          uri: ${MATCH_API_URI:http://localhost:8088}
+          predicates:
+            - Path=/api/matches/score
+        - id: get-top-batsmen
+          uri: ${MATCH_API_URI:http://localhost:8088}
+          predicates:
+            - Path=/api/matches/topbatsmen
+
+server:
+  port: 9000  # API Gateway will run on port 9000
