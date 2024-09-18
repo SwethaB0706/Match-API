@@ -17,7 +17,7 @@ import java.util.Map;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class MyControllerIntegrationTest {
+public class ControllerIntegrationTest {
 
     @LocalServerPort
     private int port;

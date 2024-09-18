@@ -14,7 +14,7 @@ import java.time.LocalDate;
 import java.util.*;
 
 @Service
-public class MyService {
+public class InsertService {
 
     @Autowired
     private MatchRepository matchesRepository;
@@ -53,7 +53,7 @@ public class MyService {
     private PowerplayRepository powerplayRepository;
 
     private final ObjectMapper objectMapper = new ObjectMapper();
-
+    // violated srp - ticking time bomb
     @Transactional
     public void insertMatchData(String jsonData) throws IOException {
         JsonNode root = objectMapper.readTree(jsonData);

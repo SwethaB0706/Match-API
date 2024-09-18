@@ -1,9 +1,7 @@
 package com.indium.service;
 
-import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.indium.repository.*;
-import com.indium.service.MyService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -20,10 +18,10 @@ import java.nio.file.Paths;
 import static org.mockito.Mockito.*;
 
 @SpringBootTest
-public class MyServiceTest {
+public class InsertServiceTest {
 
     @InjectMocks
-    private MyService myService;
+    private InsertService myService;
 
     @Mock
     private MatchRepository matchRepository;

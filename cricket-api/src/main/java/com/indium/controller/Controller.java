@@ -22,12 +22,12 @@ import java.util.Map;
 @Tag(name = "Analysing the previous cricket match data", description = "Endpoints to get info about the match")
 @RestController
 @RequestMapping("/api/matches")
-public class MyController {
+public class Controller {
 
-    private static Logger logger = org.slf4j.LoggerFactory.getLogger(MyController.class);
+    private static Logger logger = org.slf4j.LoggerFactory.getLogger(Controller.class);
 
     @Autowired
-    private MyService myService;
+    private InsertService insertService;
 
     @Autowired
     private WicketService wicketService;
@@ -50,7 +50,7 @@ public class MyController {
     @PostMapping("/insert")
     public ResponseEntity<String> insertMatchData(@RequestBody String jsonData) {
         try {
-            myService.insertMatchData(jsonData);
+            insertService.insertMatchData(jsonData);
             queryService.clearCache();
             return new ResponseEntity<>("Match data inserted successfully!", HttpStatus.CREATED);
         } catch (IOException e) {

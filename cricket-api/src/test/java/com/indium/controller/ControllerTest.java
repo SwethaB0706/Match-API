@@ -23,14 +23,14 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @ExtendWith(SpringExtension.class)
-@WebMvcTest(MyController.class)
-public class MyControllerTest {
+@WebMvcTest(Controller.class)
+public class ControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
 
     @MockBean
-    private MyService myService;
+    private InsertService myService;
 
     @MockBean
     private WicketService wicketService;
